@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 10px; /* Уменьшил отступы */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px; /* Уменьшил для телефона */
+    z-index: 2;
+    position: relative;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 20px 15px; /* Уменьшил отступы */
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+/* Стили для таймера - делаем компактнее */
+.timer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 15px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.timer-item {
+    background: rgba(255, 111, 145, 0.2);
+    border-radius: 12px;
+    padding: 10px 5px;
+    min-width: 60px; /* Уменьшил */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.timer-item span {
+    display: block;
+    font-size: 1.8rem; /* Уменьшил с 2.5rem */
+    font-weight: bold;
+    color: #d43f6b;
+    line-height: 1.2;
+}
+
+.timer-item small {
+    font-size: 0.7rem; /* Уменьшил */
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+}
+
+.hint {
+    color: #888;
+    font-style: italic;
+    margin-top: 15px;
+    font-size: 0.9rem; /* Уменьшил */
+}
+
+#timerMessage {
+    font-size: 1.1rem; /* Уменьшил */
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Стили для поздравления - адаптив */
+h1 {
+    color: #d43f6b;
+    font-size: 1.8rem; /* Уменьшил с 2.2rem */
+    margin-bottom: 10px;
+}
+
+#message, #secondMessage {
+    font-size: 1.1rem; /* Уменьшил */
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.heart {
+    font-size: 4rem; /* Уменьшил с 5rem */
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+    margin: 10px 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#personalWords {
+    color: #555;
+    line-height: 1.5;
+    margin: 15px 0;
+    font-size: 1rem; /* Уменьшил */
+}
+
+#surpriseBtn, #playVideoBtn {
+    padding: 12px 20px; /* Уменьшил */
+    font-size: 1rem; /* Уменьшил */
+    border-radius: 40px;
+    width: 100%; /* На всю ширину */
+    max-width: 280px; /* Но не больше */
+    margin: 5px auto;
+}
+
+/* Стили для падающих фотографий - адаптив */
+.flowers-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 380px) {
+    .timer-item {
+        min-width: 50px;
+        padding: 8px 3px;
+    }
+    
+    .timer-item span {
+        font-size: 1.5rem;
+    }
+    
+    .timer-item small {
+        font-size: 0.6rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .heart {
+        font-size: 3.5rem;
+    }
+}
+#message {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#secondMessage {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.heart {
+    font-size: 5rem;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+    margin: 15px 0;
+    transition: transform 0.2s;
+}
+
+.heart:active {
+    transform: scale(1.2);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#personalWords {
+    color: #555;
+    line-height: 1.6;
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
+
+#surpriseBtn {
+    background-color: #ff6f91;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 111, 145, 0.4);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+#surpriseBtn:hover {
+    background-color: #ff3b6f;
+}
+
+/* Стили для падающих цветов */
+.flowers-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
