@@ -3,7 +3,7 @@ function getTargetDate() {
     const now = new Date();
     const year = now.getFullYear();
     // Месяцы в JS идут с 0: 0 - январь, 2 - март
-    return new Date(year, 2, 7, 0, 0, 0); // 8 марта 00:00:00
+    return new Date(year, 2, 8, 0, 0, 0); // 8 марта 00:00:00
 }
 
 // Функция обновления таймера
@@ -277,4 +277,5 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('greetingBlock').style.display = 'block';
         });
     }
+
 });
